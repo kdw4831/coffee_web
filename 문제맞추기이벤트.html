@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>every week</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">                                            <!--한글폰트 Gothic A1-->               
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&family=Montserrat:wght@500&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">                                             <!--영어폰트 Montserrat-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css"><!--style.css파일을 불러옴-->
+       
+    </head>
+
+    <nav>
+        <h1 class=title><a href="메인페이지.html">every week</a></h1>
+        
+        <div class="nav-frame">
+           
+            <div class="dropdown">
+                <h2 class="dropbtn">커피이야기</h2>
+                <div class="dropdown-content">
+                <a href="우리의 원두는.html">우리의 원두는</a>
+                <a href="우리의 제조방식은.html">우리의 제조방식은</a>
+                <a href="우리의 베이커리는.html">우리의 베이커리는</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <h2 class="dropbtn"><a  href="커피메뉴.html">메뉴</a></h2>
+                <div class="dropdown-content">
+                <a href="커피메뉴.html">커피</a>
+                <a href="티메뉴.html">티</a>
+                <a href="베이커리메뉴.html">베이커리</a>
+                </div>
+                
+            </div>
+            <div class="dropdown">
+                <h2 class="dropbtn">멤버십</h2>
+                <div class="dropdown-content">
+                <a href="멤버십 소개.html">멤버십 소개</a>
+                <a href="멤버십등급별혜택.html">등급별 혜택</a>
+                
+                </div>
+                
+            </div>
+            <div class="dropdown">
+                <h2 class="dropbtn">이벤트</h2>
+                <div class="dropdown-content">
+                <a href="블로그리뷰이벤트.html">리뷰 작성 이벤트</a>
+                <a href="문제맞추기이벤트.html">문제 맞추기 이벤트</a>
+                
+                </div>
+            </div>
+        </div>
+        <br>
+    </nav>
+  <body>
+     <br><br><br><br><br><br><br>
+        <script>
+            var dday = new Date("july 1, 2022, 0:00:00").getTime();
+
+            setInterval(function() {
+            var today = new Date().getTime();//현재 날짜를 제공하는 Date객체
+            var gap = dday - today;//디데이 날짜 정보를 제공하는 Date객체
+            var day = Math.ceil(gap / (1000 * 60 * 60 * 24)); // 1일(60분*24)
+            var hour = Math.ceil((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));//1시간(60분)
+            var min = Math.ceil((gap % (1000 * 60 * 60)) / (1000 * 60));//1분(60초)
+            var sec = Math.ceil((gap % (1000 * 60)) / 1000);//1초
+
+            document.getElementById("count2").innerHTML = "이벤트 종료까지 " + day + "일 " + hour + "시간 " + min + "분 " + sec + "초 남았습니다.";
+            }, 1000);
+        </script>
+    
+    
+    
+        <div class="review-ex">
+           
+            <p>
+                문제 맞추기 이벤트입니다!!<br>
+                문제를 맞추시면 아메리카노 쿠폰번호를
+                드리는 이벤트를 하고 있습니다.<br>
+                모바일 멤버십에 적용하시면 됩니다~~!<br>
+                모두참여하셔셔 
+                상품 받아가세요!!
+            </p>
+        </div>
+        <div id="count2"></div><!--디데이 생성-->
+    
+    
+    
+     <div class="quiz">
+    
+
+        <h1>(문제)</h1>
+        <p>우리 카페의 이름은?</p>
+
+        <form action="" name="frm">
+        <input type="checkbox" id="eng">영어로 풀기.<br><!--체크박스공간을 생성하고 클릭을 했을 땐 영어로 정답을 입력을 해야 정답처리가 됨-->
+        답: <input type="text" id="answer" size="10"><!--text공간으로 text공간의 크기는 10이다.-->
+        <button type="button" onclick="func()">정답확인</button> <!--button 형태로  클릭을 했을때
+                                                               스크립트 안에 있는 함수에 들어가서 입력한 값과 맞는지 아닌지 판별함-->
+        </form>
+        <br>
+        <p id="p1"></p>
+
+        <script >
+
+            function func() {
+
+              
+                var str = document.frm.answer.value;  //초기화 시켜주기
+                var enganswer = document.frm.eng.checked;
+                
+                if(str=="") {
+                    alert('답을 입력하세요.');  //아무것도 적히지 않았을 때는 다시 답을 입력하시오를 반환한다.
+                    return;
+                }
+
+
+                
+                if(enganswer){    //영어체크 박스를 선택했을 때 
+                    str = str.toLowerCase();
+                    if(str === "everyweek"){   //정답을 영어로 적어서 맞췄다면 alert(정답입니다! 쿠폰번호는 5978364)가 뜨고 
+                        alert("정답입니다! 쿠폰 번호는 5978364");
+                        document.getElementById("p1").innerHTML = "정답 축하드립니다!!<br>쿠폰번호는 5978364입니다";
+                    } //페이지 내에 document로 인해서  html안에 "정답 축하드립니다.!! 쿠폰번호는 5978364입니다"가 뜸
+
+                    else{
+                        alert("틀렸습니다! 정답은 everyweek입니다");//틀렸을 경우 alert(틀렸습니다.~~)창이 뜨고
+                        document.getElementById("p1").innerHTML = "오답입니다 다음 기회를 노리세요!";//html안에 오답입니다. 다음 기회를 노리세요라고 뜸
+                    
+                    }
+                }
+                else{
+                    if(str == "에브리위크"){//정답을 한국어로 적어서 맞췄다면 alert(정답입니다! 쿠폰번호는 5978364)가 뜨고 
+                        alert("정답입니다! 쿠폰 번호는 5485644");
+                        document.getElementById("p1").innerHTML = "정답 축하드립니다!!<br>쿠폰번호는 5485644입니다";
+                        //페이지 내에 document로 인해서  html안에 "정답 축하드립니다.!! 쿠폰번호는 5978364입니다"가 뜸
+                    }
+                    else{
+                        alert("틀렸습니다! 정답은 에브리위크입니다");//틀렸을 경우 alert(틀렸습니다.~~)창이 뜨고
+                        document.getElementById("p1").innerHTML = "오답입니다 다음 기회를 노리세요!";
+                        //html안에 오답입니다. 다음 기회를 노리세요라고 뜸
+                    
+                    
+                    }
+                }
+                
+                
+            }
+         </script>
+    </div>
+
+    </body>
+
+
+
+
+       
+  
+
+
+
+
+  <footer>
+    <img class=icon src="사진자료/커피아이콘.png">
+    <div class="footer">
+       
+
+        <hr><!--선을 그어 줍니다.-->
+
+        <p class="footer-explation"><a href="개인정보처리방침.html">개인정보처리방침</a> | <a href="홈페이지이용약관.html">홈페이지이용약관</a> | <a href="영상정보처리기기.html">영상정보처리기기 운영방침</a> | <a href="주식회사.html">hsp 주식회사</a></p>
+        <h2>What if you want to know more about everyweek?  
+            <br>please contact me!!!<!--br은 아래로 한줄 뛰어줍니다.-->
+        </h2>
+        
+        <p>hj's phone number<br>
+        010-5955-4831
+        </p>
+        <br>
+
+    </div>
+
+    </footer>
+</html>

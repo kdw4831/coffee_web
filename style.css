@@ -1,0 +1,515 @@
+nav{
+    position:fixed;/*요소상의 위치를 결정*/
+    left:0;/*왼쪽 공백 0*/
+    top:0;/*위쪽 공백 0*/
+    width:100%;/*가로 100%*/
+    margin:0;
+    z-index: 3/*3차원에서 위로 3번 올라감*/
+   
+}
+nav:hover{
+    background-color: rgba(186, 170, 138, 0.6);/*투명도를 올려줌*/
+    border-bottom: 1px dotted #ab9a77;/*경계가 점선으로 1px*/
+    
+}
+nav:hover.dropbtn{
+    background-color: #baaa8a;/*hover효과를 줬을 때 바탕색*/
+}
+.title{
+    font-family:'montserrat', sans-serif;/*영어 폰트  몬트세랏 */
+    font-style:oblique;/*폰트스타일 오블리큐*/
+    text-align: center;/*글을 중앙으로*/
+    
+    font-size:20px;/*폰트 크기*/
+    
+}
+a{
+  text-decoration: none;/*글 밑줄 없음*/
+}
+.title a{
+    text-decoration: none;/*글 밑줄 없음*/
+    color:#977f50;
+}
+.nav-frame{
+    
+   
+    display: flex;/*창의 크기에 따라 변함*/
+    justify-content: space-around;/*메뉴바들이 규격에 맞게 펼쳐짐*/
+    
+
+    
+}
+
+.dropbtn {
+background-color:rgba(186, 170, 138, 0.6);/*배경색에 투명도를 준다 */
+font-family:'Gothic A1', sans-serif;/*한국어 폰트 고딕체*/
+color: black;
+padding:30px;
+font-size: 16px;
+width:100px;
+text-align: center;
+border-top-left-radius: 30px;/*경계를 둥글게 30px정도로*/
+border-top-right-radius: 30px;
+border-bottom-left-radius: 30px;
+border-bottom-right-radius: 30px;
+
+
+}
+
+.dropbtn a{
+  font-family:'Gothic A1', sans-serif;/*한국어 폰트 고딕체*/
+  color: black;
+
+}
+
+.dropdown {
+position: relative;/*요소 자기 자신을 기준으로 배치*/
+display: inline-block;/*여러개의 요소를 원하는 만큼 배치함*/
+width:200px;
+
+}
+
+/*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+.dropdown-content {
+font-family:'Gothic A1', sans-serif;/*한국어 폰트*/
+display: none;
+position: relative;/*요소 자기 자신을 기준으로 배치*/
+left:0;
+font-size: 16;
+font-weight: 500;/*폰트의 두께*/
+
+width: 200px;
+
+
+
+z-index: 3
+}
+.dropdown-content a {
+
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+border-top-left-radius: 30px;/*경계를 둥글게 30px정도로*/
+border-top-right-radius: 30px;
+border-bottom-left-radius: 30px;
+border-bottom-right-radius: 30px;
+}
+.dropdown-content a:hover {
+background-color: #f1f1f1;/*배경색*/
+
+
+}
+.dropdown:hover .dropdown-content {
+display: block;
+transition:0.3s;
+
+}
+.dropdown:hover .dropbtn {
+background-color:#d8c8a9;
+transition:0.3s;/*바뀌는 시간*/
+
+}
+
+
+
+body{
+    display: flex;
+    flex-direction: column;/*아래로 정렬한다*/
+    background-color: #d8c8a9;
+    margin:0;
+}
+.background-picture{
+    top:0;
+    width:100%
+}
+
+.footer{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(51, 49, 49);
+    color:white;
+   
+}
+.icon{
+    width:100px;
+    
+}
+.explation{
+    font-family:'Gothic A1', sans-serif;
+    text-align: center;
+    font-weight: 300px;
+    font-size:70px;
+    
+    margin-top:250px;/*상단에 마진을250px 주기*/
+    color:#977f50
+    
+}
+.footer-explation{
+    font-family:'Gothic A1', sans-serif;/*한국어 폰트는 고딕체*/
+    text-align: right;
+    font-weight: 400;
+    font-size: 16px;
+    padding-right: 10px;/*패딩을 10px만큼 준다.*/
+    color:white;/*폰트색은 하얀색*/
+    background-color: rgb(51, 49, 49);
+}
+
+
+/*메뉴*/
+.position{
+    margin-top:150px;
+    color: #977f50;
+}
+#container {
+    width:1400px;
+    margin:20px auto;/*마진 aoto를 하면 중앙 정렬*/
+    
+   
+  }
+  .coffee-title {
+    font-family:'Gothic A1', sans-serif;/*한국어 폰트는 고딕체*/
+    text-align: center;
+  }
+  .prod-list {
+    
+    display: flex;
+    justify-content: center;
+   
+    list-style:none;/*리스트에서 점표시를 없에버림*/
+    padding:0;
+    
+  }
+  .prod-list li {
+    float: left;
+    padding: 0;
+    margin: 10px;
+    overflow: hidden;/*넘치는 부분은 짤라서 보이지 않는다.*/
+    position: relative;
+    background: linear-gradient( #f0e3cb 40%, #e3cda8 60%  );
+    /*그라데이션 효과 넣기*/
+
+
+
+  }
+  .prod-list img {
+    border:1px solid rgb(228, 215, 215);
+    width:300px;
+    height:300px;
+    margin:0;
+    padding:0;
+    float: left;
+    z-index:1;
+  } 
+  .prod-list .caption {
+    position: absolute;
+    top:-200px;  /* 기준 위치보다 200px 아래로 */
+    width:300px;
+    height:300px;
+    padding-top:20px;
+    background:rgba(0,0,0,0.6);  /* 반투명한 검정 배경 */ 
+    opacity:0;  /* 화면에 보이지 않게 */ 
+    transition: all 0.6s ease-in-out;  /* 나타날 때 부드럽게 트랜지션 추가 */
+    z-index:2;  /* 다른 요소보다 위에 있도록 */ 
+  }
+  .prod-list li:hover .caption {
+    opacity: 1;  /* 설명글이 화면에 보이게 */ 
+    transform: translateY(200px);  /* 설명글이 아래로 200px 이동하게 */
+  }  
+  .prod-list .caption h2, .prod-list .caption p {
+    
+    color: #fff;
+    text-align: center;
+    font-family:'Gothic A1', sans-serif;
+  }      
+  .prod-list .caption h2{
+    margin-top:75px;
+  }
+
+
+/*커피이야기*/
+
+.beans{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;/*요소를 중앙으로 이동시키기*/
+  align-items: center;
+  margin-right: 100px;/*오른쪽 마진 100px */
+  
+}
+
+.beans-1{
+  display:flex;
+  flex-direction: row;/*flex에서 원래 디폴트 값이 row인데 구별하기 위해 적음*/
+  margin-bottom:100px;
+}
+
+.size{
+  width: 500px;/*가로 50px*/
+  height: 300px;/*세로  300px*/
+}
+.table-1{
+  border:1;
+  width:300px;
+  height:150px;
+  background-color: #f5f4f2;
+  z-index:2;/*3차원적으로 봤을 때 2번째 겹첬을 때 1보다 높기때문에 우선적으로 보임*/
+  
+  
+}
+
+/*겹치기 area*/
+.area_img{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left:100px;
+  width: 1230px;
+}
+
+.area_img ul{
+  display: flex;
+}
+
+.area_img li{
+  display:block; 
+  float:left; 
+  margin:0 21px 21px 0; 
+  width:calc(100% / 2 - 11px);/*너비 100%를 2-11px로나눈 값 */
+}
+.area_img li:nth-child(2n){   /*부모 안에 있는 이미지파일을 2n번째를 지정해서 수정할 수 있다.*/
+  margin-right:0;
+}
+.area_img li > div{
+  z-index:2; position: relative; 
+  display: block; 
+  margin-right: 60px; 
+  top:-80px; 
+  padding:60px 40px; 
+  min-height: 260px; /*요소의 최소 높이를 말함*/
+  background:rgb(255, 239, 223) 1px;  
+  box-shadow:24px 24px 35px rgba(0,0,0,0.04);/*그림자효과를 줌*/
+}
+.area_img li > div.img-1{
+  width:140%
+}
+.area_img li > div.img-2{
+  width: 200%
+}
+.area_img li > div > p{
+  display: block; 
+  margin-bottom: 15px; 
+  font-size: 30px; 
+  font-family:italic;
+  font-weight: 600; color:#393939;
+}
+.area_img li > div > span{
+  display:block; 
+  font-size: 14px; 
+  font-weight: 300; 
+  line-height: 1.8em; /*줄 간격을 바꿔줌*/
+  color:#666;
+}
+.area_img li > img{
+  z-index:1; 
+  width: 100%;
+}
+.area_img >div> h4{
+  
+  font-weight: 1000;
+  font-style: oblique;
+  font-size:35px;/*폰트 사이즈 35px*/
+  font-family:'Gothic A1', sans-serif;/*한국어 폰트 고딕체*/
+}
+
+/*멤버쉽*/
+
+.membership{
+  background-color:#f2e2c5; 
+}
+
+.membership >ul{
+  list-style-type:none;/*점을 없에줌*/
+  display:flex;
+  justify-content: space-around;
+  background-color: #f2e2c5;/*배경색*/
+  margin-bottom: 0;
+ 
+}
+
+.c-background{
+  
+  width:100%;
+  height: 400px;
+  margin-bottom: 0;/*밑부분 마진 0*/
+}
+.c-background2{
+  
+  width:100%;
+  height: 400px;   /*높이 400px*/
+  margin-bottom: 0;
+  margin-top:0;
+  background-color: #f2e2c5 ;/*배경색*/
+}
+.membership >h1{
+  font-weight: 1000;/*폰트 두께 1000*/
+  font-style: oblique;
+  font-size:35px;
+  font-family:'Gothic A1', sans-serif;
+  color:#977f50
+  
+}
+.membership >li{/*'>'이 표시로 자식요소에 접근할 수 있다 즉 클래스를 줄일 수 있는 꿀팁 */
+  display:flex;
+  
+  justify-content: center;
+
+  margin:100px;
+  margin-bottom: 30px;
+}
+
+.membership li > div>h4{
+  font-size: 30px;
+  text-align: center;/*글자 위치*/
+  color:#977f50;
+  font-family:'montserrat', sans-serif;
+}
+
+.membership li >div>p{
+  font-size: 15px;
+  text-align: left;
+  color:#323230;
+  font-family:'montserrat', sans-serif;
+  line-height: 30px;
+  padding-left:80px;
+  
+}
+
+.membership li>div> img{
+  display: block; 
+  margin: 0px auto;/*마진 aoto를 하면 중앙 정렬*/
+  width: 200px;
+  margin-bottom: 30px;
+  
+ 
+  
+}
+.membership li>div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width:500px;
+}
+
+.mb-introduce{
+
+  margin-left:300px;
+  margin-right: 300px;
+  font-size:20px;
+  font-weight: 600;
+  font-family:'Gothic A1', sans-serif;/*한국어 폰트  고딕체*/
+  background-color:#f2deba; 
+  border-radius: 100px;/*경계를 둥글게 100px정도로 해줌*/
+  text-align: center;
+  letter-spacing: 3px;/*글자 간격을 3px만큼 벌려줌*/
+  line-height: 40px;/*줄간격을 벌려줌*/
+}
+.mb-introduce>span{
+  margin-bottom: 30px;
+  margin-top:30px;
+}
+
+
+
+
+
+
+
+
+/*약관내용들*/
+.footer-ex{
+  margin-left:100px;/*footer 바디부분의 좌우에 마진을 줌*/
+  margin-right: 100px;
+}
+.footer-ex>h1{
+  font-family:'Gothic A1', sans-serif;
+  font-size:30px;
+  font-weight: 1000;
+  margin-top:20px;
+}
+
+.footer-ex>p{
+  font-family:'Gothic A1', sans-serif;
+  font-size:18px;
+  font-weight: 1000;
+}
+
+.footer-explation a{
+  text-decoration: none;/*밑줄을 없에버림*/
+  color:#ffffff;
+}
+
+
+
+/*review*/
+.reviewer{
+  display: flex;/*flex요소로 화면크기에따라 유동적으로 변경을 함*/
+
+  justify-content: center;/*중앙으로 해줌*/
+}
+
+.reviewer>img{
+
+  width: 400px;
+  height: 300px;
+  border:1px dotted #977f50;
+  border-radius: 5px;
+  margin:5px;
+}
+
+
+#count {
+  font-size:1.5em; /*font크기 1.5em*/
+  font-weight:bold;/*폰트 두께를 bold체로도 지정할 수있음*/
+  color:#614c22;
+  margin-top:20px;
+  font: size 20px;
+  text-align: center;
+}
+#count2 {
+  font-size:1.5em; /*font크기 1.5em*/
+  font-weight:bold;/*폰트 두께를 bold체로도 지정할 수있음*/
+  color:#614c22;
+  margin-top:20px;
+  font: size 20px;
+  text-align: center;
+}
+
+
+.review-ex{
+  font-size:25px;
+  font-weight: 600;
+  text-align: center;
+  color:#92763e;
+  background-color: #f2deb6;
+  border-radius:10px;
+  font-family:'Gothic A1', sans-serif;
+}
+
+
+
+/*quiz*/
+.quiz{
+  display: flex;
+  flex-direction: column;/*flex요소에서 아래로 정렬하게 끔 하는 것*/
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-family:'Gothic A1', sans-serif;
+  font-weight: 600;
+
+}
+.quiz>h1{
+  color:rgb(141, 33, 33);
+}
